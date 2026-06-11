@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FUKU | Web Design Portfolio</title>
+  <meta name="description" content="Web制作事業「FUKU」のポートフォリオサイト。カフェ・居酒屋・焼肉店など、飲食店を中心とした洗練されたWebデザインの制作サンプルをご紹介します。">
+  <meta name="keywords" content="FUKU, Web制作, ホームページ制作, ポートフォリオ, 飲食店, デザイン">
+  <meta property="og:title" content="FUKU | Web Design Portfolio">
+  <meta property="og:description" content="想いをかたちに。お店の魅力を引き出すWebデザイン。FUKUの制作サンプルをご覧ください。">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #6B7C45;
+      --green-dark: #57663a;
+      --green-pale: #f3f5ee;
+      --ink: #2b2b26;
+      --ink-soft: #6e6e64;
+      --line: #e4e4dc;
+      --white: #ffffff;
+      --serif-en: 'Cormorant Garamond', serif;
+      --serif-jp: 'Noto Serif JP', serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--serif-jp);
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.9;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: min(1040px, 90%);
+      margin: 0 auto;
+    }
+
+    /* ===== Fade-in animation ===== */
+    .fade {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .fade.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade.delay-1 { transition-delay: .15s; }
+    .fade.delay-2 { transition-delay: .3s; }
+    .fade.delay-3 { transition-delay: .45s; }
+
+    /* ===== Header / Hero ===== */
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      padding: 96px 24px 64px;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% -10%, var(--green-pale) 0%, transparent 70%),
+        var(--white);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      width: 1px;
+      height: 64px;
+      background: var(--green);
+      opacity: .5;
+      animation: scrollLine 2.2s ease-in-out infinite;
+    }
+
+    @keyframes scrollLine {
+      0%   { transform: scaleY(0); transform-origin: top; }
+      45%  { transform: scaleY(1); transform-origin: top; }
+      55%  { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
+    }
+
+    .hero-eyebrow {
+      font-family: var(--serif-en);
+      font-size: 0.85rem;
+      letter-spacing: .42em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 28px;
+    }
+
+    .hero-logo {
+      font-family: var(--serif-en);
+      font-weight: 500;
+      font-size: clamp(4.2rem, 13vw, 8.5rem);
+      letter-spacing: .18em;
+      line-height: 1;
+      color: var(--ink);
+      margin-left: .18em; /* optical centering for letter-spacing */
+    }
+
+    .hero-logo span { color: var(--green); }
+
+    .hero-divider {
+      width: 56px;
+      height: 1px;
+      background: var(--green);
+      margin: 36px auto 32px;
+    }
+
+    .hero-copy {
+      font-size: clamp(1rem, 2.6vw, 1.2rem);
+      letter-spacing: .22em;
+      font-weight: 400;
+      color: var(--ink);
+    }
+
+    .hero-sub {
+      margin-top: 14px;
+      font-size: .82rem;
+      letter-spacing: .14em;
+      color: var(--ink-soft);
+    }
+
+    /* ===== Section common ===== */
+    section { padding: 110px 0; }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .section-title-en {
+      font-family: var(--serif-en);
+      font-size: clamp(2.2rem, 6vw, 3rem);
+      font-weight: 500;
+      letter-spacing: .14em;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+
+    .section-title-jp {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: .8rem;
+      letter-spacing: .3em;
+      color: var(--green);
+    }
+
+    .section-title-jp::before,
+    .section-title-jp::after {
+      content: "—";
+      color: var(--line);
+      margin: 0 12px;
+    }
+
+    /* ===== About ===== */
+    .about { background: var(--white); }
+
+    .about-text {
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: clamp(.95rem, 2.4vw, 1.05rem);
+      letter-spacing: .08em;
+      line-height: 2.4;
+      color: var(--ink);
+    }
+
+    .about-text strong {
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    /* ===== Works ===== */
+    .works { background: var(--green-pale); }
+
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      transition: transform .45s ease, box-shadow .45s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(107, 124, 69, .16);
+    }
+
+    .card-visual {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .card-visual::after {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border: 1px solid rgba(255, 255, 255, .35);
+      pointer-events: none;
+    }
+
+    .card-visual .visual-title {
+      font-family: var(--serif-en);
+      font-size: 1.5rem;
+      letter-spacing: .2em;
+      color: #fff;
+      text-align: center;
+      padding: 0 16px;
+      line-height: 1.5;
+      text-shadow: 0 1px 8px rgba(0,0,0,.18);
+    }
+
+    .visual-cafe   { background: linear-gradient(135deg, #d9a9a9 0%, #c98f96 55%, #b07880 100%); }
+    .visual-izakaya{ background: linear-gradient(135deg, #4a4a44 0%, #35352f 55%, #23231f 100%); }
+    .visual-yakiniku{ background: linear-gradient(135deg, #1c1a17 0%, #2b251b 55%, #5c4a23 100%); }
+
+    .card-body {
+      padding: 28px 26px 30px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .tag {
+      font-size: .68rem;
+      letter-spacing: .12em;
+      color: var(--green);
+      border: 1px solid var(--green);
+      padding: 3px 12px;
+      border-radius: 999px;
+      background: var(--white);
+    }
+
+    .card-title {
+      font-size: 1.12rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      margin-bottom: 10px;
+      color: var(--ink);
+    }
+
+    .card-desc {
+      font-size: .85rem;
+      line-height: 2;
+      letter-spacing: .04em;
+      color: var(--ink-soft);
+      flex: 1;
+    }
+
+    .card-link {
+      margin-top: 22px;
+      font-family: var(--serif-en);
+      font-size: .82rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--green);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card-link .arrow {
+      display: inline-block;
+      width: 28px;
+      height: 1px;
+      background: var(--green);
+      position: relative;
+      transition: width .35s ease;
+    }
+
+    .card-link .arrow::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: -3px;
+      width: 8px;
+      height: 1px;
+      background: var(--green);
+      transform: rotate(35deg);
+      transform-origin: right center;
+    }
+
+    .card:hover .card-link .arrow { width: 42px; }
+
+    /* ===== Contact ===== */
+    .contact { background: var(--white); text-align: center; }
+
+    .contact-lead {
+      font-size: .95rem;
+      letter-spacing: .12em;
+      color: var(--ink);
+      margin-bottom: 40px;
+      line-height: 2.2;
+    }
+
+    .insta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 52px;
+      border: 1px solid var(--green);
+      color: var(--green);
+      text-decoration: none;
+      font-family: var(--serif-en);
+      font-size: .95rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      position: relative;
+      overflow: hidden;
+      transition: color .4s ease;
+      z-index: 0;
+    }
+
+    .insta-btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--green);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .4s ease;
+      z-index: -1;
+    }
+
+    .insta-btn:hover { color: var(--white); }
+    .insta-btn:hover::before { transform: scaleX(1); }
+
+    .insta-btn svg { width: 18px; height: 18px; }
+
+    .contact-note {
+      margin-top: 20px;
+      font-size: .78rem;
+      letter-spacing: .14em;
+      color: var(--ink-soft);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: var(--green);
+      color: rgba(255, 255, 255, .92);
+      text-align: center;
+      padding: 56px 24px 40px;
+    }
+
+    .footer-logo {
+      font-family: var(--serif-en);
+      font-size: 1.8rem;
+      letter-spacing: .3em;
+      margin-left: .3em;
+      margin-bottom: 10px;
+    }
+
+    .footer-tag {
+      font-size: .75rem;
+      letter-spacing: .2em;
+      opacity: .8;
+      margin-bottom: 28px;
+    }
+
+    .footer-copy {
+      font-family: var(--serif-en);
+      font-size: .72rem;
+      letter-spacing: .18em;
+      opacity: .65;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 880px) {
+      .works-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+      section { padding: 80px 0; }
+      .hero { min-height: 78vh; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header / Hero ===== -->
+  <header class="hero">
+    <p class="hero-eyebrow fade">Web Design Studio</p>
+    <h1 class="hero-logo fade delay-1">FUK<span>U</span></h1>
+    <div class="hero-divider fade delay-2"></div>
+    <p class="hero-copy fade delay-2">想いをかたちに、福を届けるWebデザイン</p>
+    <p class="hero-sub fade delay-3">— Portfolio &amp; Sample Works —</p>
+  </header>
+
+  <!-- ===== About ===== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-head fade">
+        <h2 class="section-title-en">About</h2>
+        <span class="section-title-jp">FUKUについて</span>
+      </div>
+      <p class="about-text fade delay-1">
+        FUKUは、飲食店を中心とした<strong>Web制作スタジオ</strong>です。<br>
+        お店の空気感や、そこに流れる物語を丁寧にすくいとり、<br class="pc">
+        訪れた人の心に残るデザインへと仕立てます。
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== Sample Works ===== -->
+  <section class="works" id="works">
+    <div class="container">
+      <div class="section-head fade">
+        <h2 class="section-title-en">Sample Works</h2>
+        <span class="section-title-jp">制作サンプル</span>
+      </div>
+      <div class="works-grid">
+
+        <a class="card fade delay-1" href="https://cafe-seoul-demo.vercel.app/" target="_blank" rel="noopener noreferrer">
+          <div class="card-visual visual-cafe">
+            <span class="visual-title">CAFE SEOUL</span>
+          </div>
+          <div class="card-body">
+            <div class="card-tags">
+              <span class="tag">カフェ</span>
+              <span class="tag">Web制作</span>
+            </div>
+            <h3 class="card-title">CAFE SEOUL</h3>
+            <p class="card-desc">韓国カフェをコンセプトにしたサンプルサイト。くすみピンクのおしゃれなデザイン。</p>
+            <span class="card-link">View Site <span class="arrow"></span></span>
+          </div>
+        </a>
+
+        <a class="card fade delay-2" href="https://kurobee-demo.vercel.app/" target="_blank" rel="noopener noreferrer">
+          <div class="card-visual visual-izakaya">
+            <span class="visual-title">炭火と肴<br>くろべえ</span>
+          </div>
+          <div class="card-body">
+            <div class="card-tags">
+              <span class="tag">居酒屋</span>
+              <span class="tag">Web制作</span>
+            </div>
+            <h3 class="card-title">炭火と肴 くろべえ</h3>
+            <p class="card-desc">和モダンな居酒屋のサンプルサイト。炭火焼きの雰囲気を落ち着いたデザインで表現。</p>
+            <span class="card-link">View Site <span class="arrow"></span></span>
+          </div>
+        </a>
+
+        <a class="card fade delay-3" href="https://fukuen-demo.vercel.app/" target="_blank" rel="noopener noreferrer">
+          <div class="card-visual visual-yakiniku">
+            <span class="visual-title">黒毛和牛 福苑</span>
+          </div>
+          <div class="card-body">
+            <div class="card-tags">
+              <span class="tag">焼肉</span>
+              <span class="tag">Web制作</span>
+            </div>
+            <h3 class="card-title">黒毛和牛 福苑</h3>
+            <p class="card-desc">高級焼肉店のサンプルサイト。黒とゴールドで重厚感のあるデザインに。</p>
+            <span class="card-link">View Site <span class="arrow"></span></span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-head fade">
+        <h2 class="section-title-en">Contact</h2>
+        <span class="section-title-jp">お問い合わせ</span>
+      </div>
+      <p class="contact-lead fade delay-1">
+        ホームページ制作のご相談・ご依頼は、<br>
+        Instagramよりお気軽にDMください。
+      </p>
+      <a class="insta-btn fade delay-2" href="https://www.instagram.com/fuku__designs" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        Instagram
+      </a>
+      <p class="contact-note fade delay-3">@fuku__designs</p>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p class="footer-logo">FUKU</p>
+    <p class="footer-tag">想いをかたちに、福を届けるWebデザイン</p>
+    <p class="footer-copy">&copy; 2026 FUKU. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade').forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
