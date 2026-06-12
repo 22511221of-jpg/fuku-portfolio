@@ -143,6 +143,26 @@
       color: var(--ink-soft);
     }
 
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 36px;
+      padding: 16px 44px;
+      background: var(--green);
+      color: var(--white);
+      text-decoration: none;
+      font-size: .92rem;
+      letter-spacing: .16em;
+      font-weight: 500;
+      transition: background .35s ease, transform .35s ease, box-shadow .35s ease;
+    }
+
+    .hero-cta:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(107, 124, 69, .28);
+    }
+
     /* ===== Section common ===== */
     section { padding: 110px 0; }
 
@@ -193,8 +213,72 @@
       font-weight: 600;
     }
 
+    /* ===== Profile ===== */
+    .profile-card {
+      margin: 56px auto 0;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 18px;
+      padding: 32px 28px;
+      background: var(--green-pale);
+      border: 1px solid var(--line);
+    }
+
+    .profile-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 1px solid var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif-en);
+      font-size: 1.6rem;
+      color: var(--green);
+      flex-shrink: 0;
+    }
+
+    .profile-name {
+      font-family: var(--serif-en);
+      font-size: 1.15rem;
+      letter-spacing: .16em;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .profile-name span {
+      display: block;
+      margin-top: 6px;
+      font-family: var(--serif-jp);
+      font-size: .7rem;
+      letter-spacing: .22em;
+      color: var(--green);
+    }
+
+    .profile-bio {
+      font-size: .85rem;
+      letter-spacing: .04em;
+      line-height: 2;
+      color: var(--ink-soft);
+    }
+
     /* ===== Works ===== */
     .works { background: var(--green-pale); }
+
+    .works-note {
+      margin-top: 18px;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 480px;
+      font-size: .78rem;
+      letter-spacing: .06em;
+      line-height: 1.9;
+      color: var(--ink-soft);
+    }
 
     .works-grid {
       display: grid;
@@ -324,6 +408,81 @@
 
     .card:hover .card-link .arrow { width: 42px; }
 
+    /* ===== Services ===== */
+    .services { background: var(--white); }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .service-item {
+      background: var(--green-pale);
+      border: 1px solid var(--line);
+      padding: 26px 20px;
+      text-align: center;
+    }
+
+    .service-title {
+      font-size: .95rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .service-desc {
+      font-size: .78rem;
+      letter-spacing: .04em;
+      line-height: 1.8;
+      color: var(--ink-soft);
+    }
+
+    /* ===== Pricing ===== */
+    .pricing { background: var(--green-pale); }
+
+    .price-list {
+      list-style: none;
+      max-width: 480px;
+      margin: 0 auto;
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 4px 24px;
+    }
+
+    .price-list li {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: .9rem;
+      letter-spacing: .06em;
+    }
+
+    .price-list li:last-child { border-bottom: none; }
+
+    .price-name { color: var(--ink); }
+
+    .price-value {
+      font-family: var(--serif-en);
+      font-weight: 500;
+      letter-spacing: .04em;
+      color: var(--green);
+    }
+
+    .price-note {
+      margin-top: 28px;
+      text-align: center;
+      font-size: .78rem;
+      letter-spacing: .06em;
+      line-height: 1.9;
+      color: var(--ink-soft);
+    }
+
     /* ===== Contact ===== */
     .contact { background: var(--white); text-align: center; }
 
@@ -423,6 +582,7 @@
     <div class="hero-divider fade delay-2"></div>
     <p class="hero-copy fade delay-2">想いをカタチに、福を届けるWebデザイン</p>
     <p class="hero-sub fade delay-3">— Portfolio &amp; Sample Works —</p>
+    <a href="#contact" class="hero-cta fade delay-3">制作について相談する</a>
   </header>
 
   <!-- ===== About ===== -->
@@ -438,6 +598,16 @@
         ▷ロゴからHPまでトータルサポート<br>
         ▷お気軽にDMください📩
       </p>
+      <div class="profile-card fade delay-2">
+        <div class="profile-avatar">F</div>
+        <div class="profile-info">
+          <p class="profile-name">FUKU<span>Web Designer</span></p>
+          <p class="profile-bio">
+            飲食店を中心に、Web制作・ロゴデザインを行っています。<br>
+            シンプルで、お店の魅力がまっすぐ伝わるデザインを大切にしています。
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -447,6 +617,7 @@
       <div class="section-head fade">
         <h2 class="section-title-en">Sample Works</h2>
         <span class="section-title-jp">制作サンプル</span>
+        <p class="works-note">※掲載作品はすべて自主制作のサンプルです（実店舗・企業様の制作物ではありません）</p>
       </div>
       <div class="works-grid">
 
@@ -496,6 +667,51 @@
         </a>
 
       </div>
+    </div>
+  </section>
+
+  <!-- ===== Services ===== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-head fade">
+        <h2 class="section-title-en">Services</h2>
+        <span class="section-title-jp">対応可能な制作内容</span>
+      </div>
+      <div class="service-grid">
+        <div class="service-item fade delay-1">
+          <p class="service-title">ホームページ制作</p>
+          <p class="service-desc">飲食店・店舗のWebサイト</p>
+        </div>
+        <div class="service-item fade delay-2">
+          <p class="service-title">LP制作</p>
+          <p class="service-desc">商品・サービスの紹介ページ</p>
+        </div>
+        <div class="service-item fade delay-1">
+          <p class="service-title">ロゴデザイン</p>
+          <p class="service-desc">お店・ブランドのロゴ作成</p>
+        </div>
+        <div class="service-item fade delay-2">
+          <p class="service-title">サイト修正・更新</p>
+          <p class="service-desc">既存サイトのリニューアル</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Pricing ===== -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-head fade">
+        <h2 class="section-title-en">Pricing</h2>
+        <span class="section-title-jp">料金目安</span>
+      </div>
+      <ul class="price-list fade delay-1">
+        <li><span class="price-name">ロゴデザイン</span><span class="price-value">¥15,000〜</span></li>
+        <li><span class="price-name">LP制作</span><span class="price-value">¥30,000〜</span></li>
+        <li><span class="price-name">ホームページ制作</span><span class="price-value">¥80,000〜</span></li>
+        <li><span class="price-name">サイト修正・更新</span><span class="price-value">¥5,000〜</span></li>
+      </ul>
+      <p class="price-note fade delay-2">※ページ数や内容により変動します。詳細はお気軽にご相談ください。</p>
     </div>
   </section>
 
