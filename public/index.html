@@ -76,12 +76,18 @@
     .hero::before {
       content: "";
       position: absolute;
-      inset: 0;
+      top: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(620px, 82vw);
+      height: min(620px, 82vw);
       background-image: url('/hero.png');
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
-      opacity: .15;
+      opacity: .28;
+      mix-blend-mode: multiply;
+      pointer-events: none;
       z-index: -1;
     }
 
@@ -124,13 +130,6 @@
     }
 
     .hero-logo span { color: var(--green); }
-
-    .hero-logo-img {
-      display: block;
-      width: clamp(280px, 90vw, 480px);
-      height: auto;
-      margin: 0 auto;
-    }
 
     .hero-divider {
       width: 56px;
@@ -672,7 +671,6 @@
   <!-- ===== Header / Hero ===== -->
   <header class="hero">
     <p class="hero-eyebrow fade">Web Design Studio</p>
-    <div class="hero-logo-wrap fade delay-1"><img class="hero-logo-img" src="/hero.png" alt="FUKU"></div>
     <div class="hero-divider fade delay-2"></div>
     <h1 class="hero-copy fade delay-2">お店の魅力が、<br>ちゃんと伝わるホームページを。</h1>
     <p class="hero-sub fade delay-3">店名・営業時間・メニュー・アクセス・予約。お客様が知りたい情報を、スマホでも見やすく整理します。飲食店・小さなお店のためのWeb制作です。</p>
