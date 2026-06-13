@@ -117,8 +117,8 @@ body.scrolled .navbar {
 .nav-logo {
   position: relative;
   display: block;
-  width: 110px;
-  height: 64px;
+  width: 140px;
+  height: 40px;
   transition: height .35s ease;
 }
 body.scrolled .nav-logo { height: 32px; }
