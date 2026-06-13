@@ -73,6 +73,18 @@
       background-color: #F5EFE4;
     }
 
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url('/hero.png');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: .15;
+      z-index: -1;
+    }
+
     .hero::after {
       content: "";
       position: absolute;
