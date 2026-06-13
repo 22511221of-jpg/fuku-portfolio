@@ -609,17 +609,36 @@ footer {
   text-align: center;
   padding: 56px 24px 36px;
 }
-.footer-logo {
-  font-size: 1.3rem;
-  letter-spacing: .3em;
-  margin-bottom: 12px;
+.footer-logo-circle {
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 20px;
+  background: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-logo-circle img {
+  width: 200px;
+  height: auto;
 }
 .footer-tag {
   font-size: .85rem;
   letter-spacing: .12em;
   opacity: .85;
+  margin-bottom: 20px;
+}
+.footer-social {
   margin-bottom: 28px;
 }
+.footer-social a {
+  display: inline-flex;
+  color: var(--white);
+  transition: opacity .25s ease;
+}
+.footer-social a:hover { opacity: .75; }
+.footer-social svg { width: 26px; height: 26px; }
 .footer-nav {
   display: flex;
   justify-content: center;
