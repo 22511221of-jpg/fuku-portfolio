@@ -239,10 +239,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: var(--serif-en);
-      font-size: 1.6rem;
-      color: var(--green);
+      overflow: hidden;
       flex-shrink: 0;
+    }
+
+    .profile-avatar img {
+      width: 54px;
+      height: 54px;
+      object-fit: contain;
+      border-radius: 50%;
     }
 
     .profile-name {
@@ -786,7 +791,7 @@
         「ホームページは初めて」という方にも、分かりやすく進めますのでご安心ください。
       </p>
       <div class="profile-card fade delay-2">
-        <div class="profile-avatar">F</div>
+        <div class="profile-avatar"><img src="/hero.png" alt="FUKU"></div>
         <div class="profile-info">
           <p class="profile-name">FUKU<span>Web Designer</span></p>
         </div>
