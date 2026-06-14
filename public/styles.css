@@ -390,6 +390,16 @@ body.scrolled .nav-logo .logo-icon { opacity: 1; transform: scale(1); }
   color: var(--ink-soft);
   text-align: center;
 }
+.story-text {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 2.2;
+  letter-spacing: .04em;
+  color: var(--ink-soft);
+}
+.story-text p { margin-bottom: 28px; }
+.story-text p:last-child { margin-bottom: 0; }
 .business-list {
   max-width: 480px;
   margin: 0 auto;
@@ -582,25 +592,27 @@ body.scrolled .nav-logo .logo-icon { opacity: 1; transform: scale(1); }
   height: 1px;
   background: var(--line);
 }
-.insta-wrap { text-align: center; }
-.insta-btn {
-  display: inline-block;
-  padding: 20px 56px;
-  font-size: 1rem;
-  letter-spacing: .12em;
-  background: var(--green);
-  color: var(--white);
+.contact-methods {
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 28px;
   border: 1px solid var(--green);
+  color: var(--green);
+  font-size: 1rem;
+  letter-spacing: .08em;
   transition: background .3s ease, color .3s ease;
 }
-.insta-btn:hover { background: var(--white); color: var(--green); }
-.contact-note {
-  margin-top: 18px;
-  font-size: .85rem;
-  letter-spacing: .04em;
-  color: var(--ink-soft);
-  text-align: center;
-}
+.contact-method:hover { background: var(--green); color: var(--white); }
+.contact-method-icon { display: inline-flex; flex-shrink: 0; }
+.contact-method-icon svg { width: 22px; height: 22px; }
 
 /* ===== Footer ===== */
 footer {
