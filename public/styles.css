@@ -412,22 +412,6 @@ body.scrolled .nav-logo .logo-icon { opacity: 1; transform: scale(1); }
 }
 .story-text p { margin-bottom: 28px; }
 .story-text p:last-child { margin-bottom: 0; }
-.profile-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-  max-width: 640px;
-  margin: 0 auto;
-}
-.profile-avatar {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: var(--white);
-  border: 1px solid var(--line);
-  flex-shrink: 0;
-}
 .business-list {
   max-width: 480px;
   margin: 0 auto;
@@ -490,6 +474,30 @@ body.scrolled .nav-logo .logo-icon { opacity: 1; transform: scale(1); }
   line-height: 1.9;
   letter-spacing: .04em;
   color: var(--ink-soft);
+}
+.service-check-list {
+  list-style: none;
+  max-width: 280px;
+  margin: 18px auto 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.service-check-list li {
+  font-size: .85rem;
+  line-height: 1.7;
+  letter-spacing: .03em;
+  color: var(--ink-soft);
+  padding-left: 24px;
+  position: relative;
+}
+.service-check-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: 600;
 }
 
 /* Pricing table */
@@ -573,10 +581,10 @@ body.scrolled .nav-logo .logo-icon { opacity: 1; transform: scale(1); }
 /* Price cards */
 .price-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   max-width: 880px;
-  margin: 0 auto 32px;
+  margin: 0 auto 48px;
 }
 .price-card {
   background: var(--white);
@@ -636,22 +644,59 @@ body.scrolled .nav-logo .logo-icon { opacity: 1; transform: scale(1); }
   letter-spacing: .04em;
   color: var(--ink-soft);
 }
-.price-card-plans {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-bottom: 20px;
+@media (max-width: 880px) {
+  .price-grid { grid-template-columns: 1fr; }
 }
-.price-card-plan {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 12px;
-  font-size: .95rem;
+
+/* Maintenance comparison */
+.maintenance-head {
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  margin: 8px 0 28px;
+}
+.maintenance-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 680px;
+  margin: 0 auto 20px;
+}
+.maintenance-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 32px 28px;
+  text-align: center;
+}
+.maintenance-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  margin-bottom: 10px;
+}
+.maintenance-freq {
+  font-size: .9rem;
   letter-spacing: .04em;
+  color: var(--ink-soft);
+  margin-bottom: 18px;
+}
+.maintenance-price {
+  font-size: 1.4rem;
+  letter-spacing: .04em;
+  color: var(--green);
+  font-weight: 600;
+}
+.maintenance-note {
+  text-align: center;
+  font-size: .85rem;
+  letter-spacing: .04em;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
 }
 @media (max-width: 880px) {
   .price-grid { grid-template-columns: 1fr; }
+  .maintenance-grid { grid-template-columns: 1fr; max-width: 480px; }
 }
 
 /* Flow steps */
@@ -787,11 +832,7 @@ footer {
   padding: 56px 24px 36px;
 }
 .footer-logo-circle {
-  width: 220px;
-  height: 220px;
   margin: 0 auto 20px;
-  background: var(--white);
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
