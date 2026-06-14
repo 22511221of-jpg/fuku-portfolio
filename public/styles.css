@@ -697,6 +697,11 @@ body.scrolled .nav-logo .logo-icon { opacity: 1; transform: scale(1); }
   .price-grid { grid-template-columns: 1fr; }
 }
 
+.price-single {
+  max-width: 380px;
+  margin: 0 auto 8px;
+}
+
 /* Maintenance comparison */
 .maintenance-head {
   text-align: center;
@@ -898,6 +903,9 @@ footer {
 }
 .footer-social {
   margin-bottom: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 22px;
 }
 .footer-social a {
   display: inline-flex;
