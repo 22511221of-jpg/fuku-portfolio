@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
+<body class="has-mobile-cta">
 
   <header class="navbar">
     <div class="nav-inner">
@@ -33,40 +33,183 @@
     <a href="/contact.html">CONTACT</a>
   </nav>
 
-  <!-- ===== Hero ===== -->
+  <!-- ===== 1. Hero ===== -->
   <header class="hero-top">
     <div class="hero-top-content">
       <h1 class="fade">お客様は来店の前に、<br>スマホで決めています。</h1>
       <p class="fade delay-1">あなたのお店の想いが、ちゃんと伝わる<br>ホームページを一緒に作りましょう。</p>
-      <a href="/contact.html" class="btn btn-white fade delay-2">制作について相談する</a>
+      <div class="hero-cta-group fade delay-2">
+        <a href="/contact.html" class="btn btn-fill">まずは無料で相談する</a>
+        <a href="#works" class="btn btn-white">制作サンプルを見る</a>
+      </div>
     </div>
   </header>
 
-  <!-- ===== About teaser ===== -->
+  <!-- ===== 2. お悩み共感 ===== -->
   <section>
     <div class="container">
       <div class="section-head fade">
-        <span class="section-tag">About FUKU</span>
-        <h2 class="section-title">小さなお店の「伝えたいこと」を、<br>ホームページというカタチに。</h2>
-        <p class="section-lead fade delay-1">
-          大きな制作会社ではありませんが、<br>
-          その分ひとつひとつのお店と丁寧に向き合います。<br>
-          まずはお気軽にお話しください。
+        <span class="section-tag">Voice</span>
+        <h2 class="section-title">こんなお気持ち、ありませんか？</h2>
+      </div>
+      <ul class="concern-list">
+        <li class="fade delay-1">「ホームページを作りたいけれど、何から始めればいいかわからない」</li>
+        <li class="fade delay-2">「今あるサイトが古くて、スマホで見づらいまま放置している」</li>
+        <li class="fade delay-3">「メニューや営業時間が変わっても、すぐに直せない」</li>
+        <li class="fade delay-3">「忙しくて、ネットのことまで手が回らない」</li>
+      </ul>
+      <p class="about-text fade">
+        ひとつでも当てはまったら、まずは気軽に話しかけてみてください。
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== 3. 制作者紹介 ===== -->
+  <section class="bg-pale">
+    <div class="container">
+      <div class="section-head fade">
+        <span class="section-tag">About</span>
+        <h2 class="section-title">FUKUについて</h2>
+      </div>
+      <div class="profile-block">
+        <div class="profile-avatar fade"></div>
+        <p class="about-text fade delay-1">
+          学生時代に、父が営む農園のホームページを作ったことがきっかけで、Web制作を始めました。<br>
+          「お店の良さが、ちゃんと伝わってほしい」その想いで、ひとつひとつ丁寧に制作しています。<br>
+          大きな会社ではないからこそ、近い距離で、一緒に考えながら進められます。
         </p>
       </div>
-      <div style="text-align:center;">
-        <a href="/about.html" class="btn fade delay-2">ABOUTを見る</a>
+      <div style="text-align:center; margin-top:40px;">
+        <a href="/about.html" class="btn fade delay-2">ABOUTを詳しく見る</a>
       </div>
     </div>
   </section>
 
-  <!-- ===== Works preview ===== -->
-  <section class="bg-pale">
+  <!-- ===== 4. サービス概要 ===== -->
+  <section>
+    <div class="container">
+      <div class="section-head fade">
+        <span class="section-tag">Service</span>
+        <h2 class="section-title">ご提供するサービス</h2>
+      </div>
+      <div class="service-grid service-grid-3">
+        <a href="#service" class="service-card fade delay-1">
+          <div class="service-num">01</div>
+          <h3 class="service-title">HOMEPAGE</h3>
+          <p class="service-desc">ホームページ制作</p>
+        </a>
+        <a href="#service" class="service-card fade delay-2">
+          <div class="service-num">02</div>
+          <h3 class="service-title">LP</h3>
+          <p class="service-desc">ランディングページ制作</p>
+        </a>
+        <a href="#service" class="service-card fade delay-3">
+          <div class="service-num">03</div>
+          <h3 class="service-title">LOGO</h3>
+          <p class="service-desc">ロゴデザイン</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5. 料金プラン ===== -->
+  <section class="bg-pale" id="service">
+    <div class="container">
+      <div class="section-head fade">
+        <span class="section-tag">Price</span>
+        <h2 class="section-title">料金プラン</h2>
+      </div>
+
+      <div class="monitor-box fade">
+        <div class="monitor-badge">⚡ 先着3名様限定 モニター価格</div>
+        <div class="monitor-items">
+          <div class="monitor-item">
+            <span class="monitor-name">ホームページ制作</span>
+            <span class="monitor-prices"><span class="monitor-old">¥80,000</span>→ <span class="monitor-new">¥50,000</span></span>
+          </div>
+          <div class="monitor-item">
+            <span class="monitor-name">LP制作</span>
+            <span class="monitor-prices"><span class="monitor-old">¥50,000</span>→ <span class="monitor-new">¥30,000</span></span>
+          </div>
+        </div>
+        <p class="monitor-note">※Instagramで実績公開にご協力いただける方限定</p>
+      </div>
+
+      <div class="price-grid fade delay-1">
+        <div class="price-card">
+          <div class="price-card-head">
+            <span class="price-card-num">01</span>
+            <h3 class="price-card-title">ホームページ制作</h3>
+            <span class="price-card-value">¥80,000〜</span>
+          </div>
+          <ul class="price-check-list">
+            <li>トップページ＋主要ページ</li>
+            <li>スマホ対応標準搭載</li>
+            <li>メニュー・アクセス・予約導線</li>
+            <li>SEO初期設定</li>
+          </ul>
+          <p class="price-card-period">制作期間：1〜2ヶ月</p>
+        </div>
+
+        <div class="price-card">
+          <div class="price-card-head">
+            <span class="price-card-num">02</span>
+            <h3 class="price-card-title">LP制作</h3>
+            <span class="price-card-value">¥50,000〜</span>
+          </div>
+          <ul class="price-check-list">
+            <li>1ページ完結</li>
+            <li>お問い合わせ導線</li>
+            <li>スマホ対応</li>
+          </ul>
+          <p class="price-card-period">制作期間：2〜4週間</p>
+        </div>
+
+        <div class="price-card">
+          <div class="price-card-head">
+            <span class="price-card-num">03</span>
+            <h3 class="price-card-title">ロゴデザイン</h3>
+            <span class="price-card-value">¥20,000〜</span>
+          </div>
+          <ul class="price-check-list">
+            <li>ロゴマーク・ロゴタイプ</li>
+            <li>修正回数無制限</li>
+            <li>納品データ(PNG/JPG/PDF)</li>
+          </ul>
+          <p class="price-card-period">制作期間：2〜4週間</p>
+        </div>
+
+        <div class="price-card">
+          <div class="price-card-head">
+            <span class="price-card-num">04</span>
+            <h3 class="price-card-title">保守・更新サポート</h3>
+          </div>
+          <div class="price-card-plans">
+            <div class="price-card-plan">
+              <span>月額プラン（何度でも）</span>
+              <span class="price-card-value">¥20,000/月</span>
+            </div>
+            <div class="price-card-plan">
+              <span>月2回プラン</span>
+              <span class="price-card-value">¥10,000/月</span>
+            </div>
+          </div>
+          <p class="price-card-period">※必要な時だけのご相談も可能です</p>
+        </div>
+      </div>
+
+      <p class="price-note fade delay-2">※内容により変動します。まずはお気軽にご相談ください。</p>
+    </div>
+  </section>
+
+  <!-- ===== 6. 制作サンプル ===== -->
+  <section id="works">
     <div class="container">
       <div class="section-head fade">
         <span class="section-tag">Works</span>
         <h2 class="section-title">制作サンプル</h2>
       </div>
+      <p class="note-text fade">※掲載作品はすべて自主制作のホームページ制作サンプルです</p>
       <div class="works-grid">
 
         <a class="card fade delay-1" href="https://cafe-seoul-demo.vercel.app/" target="_blank" rel="noopener noreferrer">
@@ -79,7 +222,7 @@
               <span class="tag">Web制作</span>
             </div>
             <h3 class="card-title">CAFE SEOUL</h3>
-            <p class="card-desc">韓国カフェをコンセプトにしたサンプルサイト。くすみピンクのおしゃれなデザイン。</p>
+            <p class="card-desc">世界観が伝わる韓国カフェ風デザイン。</p>
             <span class="card-link">View Site <span class="arrow"></span></span>
           </div>
         </a>
@@ -94,7 +237,7 @@
               <span class="tag">Web制作</span>
             </div>
             <h3 class="card-title">炭火と肴 くろべえ</h3>
-            <p class="card-desc">和モダンな居酒屋のサンプルサイト。炭火焼きの雰囲気を落ち着いたデザインで表現。</p>
+            <p class="card-desc">和の雰囲気を表現した居酒屋サイト。</p>
             <span class="card-link">View Site <span class="arrow"></span></span>
           </div>
         </a>
@@ -109,31 +252,75 @@
               <span class="tag">Web制作</span>
             </div>
             <h3 class="card-title">黒毛和牛 福苑</h3>
-            <p class="card-desc">高級焼肉店のサンプルサイト。黒とゴールドで重厚感のあるデザインに。</p>
+            <p class="card-desc">高級感を大切にした焼肉店サイト。</p>
             <span class="card-link">View Site <span class="arrow"></span></span>
           </div>
         </a>
 
       </div>
-      <div style="text-align:center; margin-top:48px;">
-        <a href="/works.html" class="btn fade">WORKSをもっと見る</a>
+    </div>
+  </section>
+
+  <!-- ===== 7. 制作の流れ ===== -->
+  <section class="bg-pale">
+    <div class="container">
+      <div class="section-head fade">
+        <span class="section-tag">Flow</span>
+        <h2 class="section-title">制作の流れ</h2>
+      </div>
+      <div class="flow-list">
+        <div class="flow-item fade delay-1">
+          <div class="flow-num">1</div>
+          <div class="flow-body">
+            <h3 class="flow-title">ご相談（無料）</h3>
+          </div>
+        </div>
+        <div class="flow-item fade delay-2">
+          <div class="flow-num">2</div>
+          <div class="flow-body">
+            <h3 class="flow-title">ヒアリング・お見積り</h3>
+          </div>
+        </div>
+        <div class="flow-item fade delay-3">
+          <div class="flow-num">3</div>
+          <div class="flow-body">
+            <h3 class="flow-title">デザイン制作</h3>
+          </div>
+        </div>
+        <div class="flow-item fade delay-3">
+          <div class="flow-num">4</div>
+          <div class="flow-body">
+            <h3 class="flow-title">確認・修正</h3>
+          </div>
+        </div>
+        <div class="flow-item fade delay-3">
+          <div class="flow-num">5</div>
+          <div class="flow-body">
+            <h3 class="flow-title">納品・公開</h3>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== Contact teaser ===== -->
+  <!-- ===== 8. 最終CTA ===== -->
   <section>
     <div class="container">
       <div class="section-head fade">
         <span class="section-tag">Contact</span>
-        <h2 class="section-title">ホームページのこと、<br>まずは気軽にご相談ください。</h2>
-        <p class="section-lead fade delay-1">相談・お見積りは無料です。</p>
+        <h2 class="section-title">ホームページのこと、<br>まずは気軽に聞いてみませんか？</h2>
+        <p class="section-lead fade delay-1">
+          相談・お見積りは無料です。<br>
+          「ちょっと聞いてみたい」だけでも大丈夫です。
+        </p>
       </div>
       <div style="text-align:center;">
-        <a href="/contact.html" class="btn btn-fill fade delay-2">お問い合わせ</a>
+        <a href="/contact.html" class="btn btn-fill fade delay-2">無料で相談する</a>
       </div>
     </div>
   </section>
+
+  <a href="/contact.html" class="mobile-cta">相談する</a>
 
   <footer>
     <div class="footer-logo-circle"><img src="/fuku-logo-full.png" alt="Web design FUKU"></div>
