@@ -28,6 +28,44 @@ if (hamburger) {
   drawer.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeDrawer));
 }
 
+// ===== Accordion (Works) =====
+const worksToggle = document.getElementById('worksToggle');
+const worksPanel = document.getElementById('worksPanel');
+
+function openPanel() {
+  worksToggle.setAttribute('aria-expanded', 'true');
+  worksPanel.style.maxHeight = worksPanel.scrollHeight + 'px';
+}
+function closePanel() {
+  worksToggle.setAttribute('aria-expanded', 'false');
+  worksPanel.style.maxHeight = '0px';
+}
+
+if (worksToggle && worksPanel) {
+  worksToggle.addEventListener('click', () => {
+    const isOpen = worksToggle.getAttribute('aria-expanded') === 'true';
+    if (isOpen) closePanel();
+    else openPanel();
+  });
+
+  // Open automatically when linked via #works, and clear maxHeight after
+  // transition so the panel can grow if the viewport is resized.
+  const openIfHashTargetsWorks = () => {
+    if (window.location.hash === '#works') openPanel();
+  };
+  document.querySelectorAll('a[href$="#works"]').forEach((a) => {
+    a.addEventListener('click', () => setTimeout(openPanel, 50));
+  });
+  window.addEventListener('hashchange', openIfHashTargetsWorks);
+  openIfHashTargetsWorks();
+
+  worksPanel.addEventListener('transitionend', () => {
+    if (worksToggle.getAttribute('aria-expanded') === 'true') {
+      worksPanel.style.maxHeight = 'none';
+    }
+  });
+}
+
 // ===== Fade-in on scroll =====
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {

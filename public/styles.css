@@ -327,6 +327,55 @@ body.scrolled .nav-logo .logo-icon { opacity: 1; transform: scale(1); }
 }
 .card:hover .card-link .arrow { width: 42px; }
 
+/* ===== Accordion ===== */
+.accordion {
+  max-width: 1040px;
+  margin: 0 auto;
+  border: 1px solid var(--line);
+}
+.accordion-toggle {
+  width: 100%;
+  min-height: 56px;
+  background: var(--white);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 28px;
+  font-family: var(--font);
+  font-size: 1rem;
+  letter-spacing: .12em;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background .25s ease;
+}
+.accordion-toggle:hover { background: var(--green-pale); }
+.accordion-icon {
+  width: 11px;
+  height: 11px;
+  border-right: 2px solid var(--green);
+  border-bottom: 2px solid var(--green);
+  transform: rotate(45deg);
+  transition: transform .35s ease;
+  flex-shrink: 0;
+  margin-top: -4px;
+}
+.accordion-toggle[aria-expanded="true"] .accordion-icon {
+  transform: rotate(-135deg);
+  margin-top: 4px;
+}
+.accordion-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .55s ease;
+}
+.accordion-panel-inner { padding: 28px 28px 8px; }
+.accordion-panel-inner .note-text { margin-top: 0; }
+@media (max-width: 880px) {
+  .accordion-panel-inner { padding: 24px 16px 4px; }
+}
+
 /* ===== Hero (TOP) ===== */
 .hero-top {
   position: relative;
