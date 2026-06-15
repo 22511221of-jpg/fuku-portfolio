@@ -7,10 +7,11 @@
   --green-dark: #57663a;
   --green-pale: #f3f5ee;
   --ink: #2C2C2C;
-  --ink-soft: #6e6e64;
+  --ink-soft: #4a4a44;
   --line: #e4e4dc;
   --white: #ffffff;
   --font: 'Noto Serif JP', serif;
+  --font-sans: 'Noto Sans JP', sans-serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -19,6 +20,7 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font);
+  font-size: 16px;
   color: var(--ink);
   background: var(--white);
   line-height: 1.9;
@@ -32,6 +34,13 @@ body.no-scroll { overflow: hidden; }
 img { max-width: 100%; display: block; }
 
 a { color: inherit; text-decoration: none; }
+
+/* Body copy (paragraphs / list items) uses Sans for readability;
+   headings, nav, and labels keep the Serif brand font. */
+p, li {
+  font-family: var(--font-sans);
+  line-height: 1.9;
+}
 
 .container {
   width: min(1040px, 90%);
@@ -58,14 +67,15 @@ section { padding: 96px 0; }
 .section-tag {
   display: inline-block;
   font-size: .8rem;
+  font-weight: 600;
   letter-spacing: .3em;
   color: var(--green);
   text-transform: uppercase;
   margin-bottom: 12px;
 }
 .section-title {
-  font-size: clamp(1.4rem, 4vw, 1.9rem);
-  font-weight: 500;
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  font-weight: 700;
   letter-spacing: .08em;
   line-height: 1.7;
   color: var(--ink);
@@ -74,7 +84,7 @@ section { padding: 96px 0; }
   margin: 18px auto 0;
   max-width: 540px;
   font-size: 1rem;
-  line-height: 2.1;
+  line-height: 2;
   letter-spacing: .04em;
   color: var(--ink-soft);
   text-align: center;
@@ -83,7 +93,7 @@ section { padding: 96px 0; }
   text-align: center;
   max-width: 540px;
   margin: 0 auto 48px;
-  font-size: .85rem;
+  font-size: .95rem;
   line-height: 1.9;
   letter-spacing: .04em;
   color: var(--ink-soft);
@@ -286,8 +296,8 @@ body.scrolled .nav-logo .logo-icon { opacity: 1; transform: scale(1); }
   border-radius: 999px;
 }
 .card-title {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.15rem;
+  font-weight: 700;
   letter-spacing: .08em;
   margin-bottom: 10px;
 }
@@ -402,13 +412,13 @@ body.scrolled .nav-logo .logo-icon { opacity: 1; transform: scale(1); }
 }
 .hero-top-content h1 {
   font-size: clamp(1.6rem, 5.5vw, 2.6rem);
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: .06em;
   line-height: 1.6;
   margin-bottom: 20px;
 }
 .hero-top-content p {
-  font-size: clamp(.95rem, 2.6vw, 1.1rem);
+  font-size: clamp(.95rem, 2.2vw, 1rem);
   letter-spacing: .04em;
   line-height: 2;
   margin-bottom: 36px;
@@ -445,8 +455,8 @@ body.scrolled .nav-logo .logo-icon { opacity: 1; transform: scale(1); }
 .about-text {
   max-width: 640px;
   margin: 0 auto;
-  font-size: clamp(1rem, 2.6vw, 1.1rem);
-  line-height: 2.2;
+  font-size: 1rem;
+  line-height: 2;
   letter-spacing: .04em;
   color: var(--ink-soft);
   text-align: center;
@@ -455,7 +465,7 @@ body.scrolled .nav-logo .logo-icon { opacity: 1; transform: scale(1); }
   max-width: 640px;
   margin: 0 auto;
   font-size: 1rem;
-  line-height: 2.2;
+  line-height: 2;
   letter-spacing: .04em;
   color: var(--ink-soft);
 }
@@ -513,13 +523,13 @@ body.scrolled .nav-logo .logo-icon { opacity: 1; transform: scale(1); }
   margin-bottom: 14px;
 }
 .service-title {
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 700;
   letter-spacing: .1em;
   margin-bottom: 14px;
 }
 .service-desc {
-  font-size: .9rem;
+  font-size: .95rem;
   line-height: 1.9;
   letter-spacing: .04em;
   color: var(--ink-soft);
@@ -566,13 +576,14 @@ body.scrolled .nav-logo .logo-icon { opacity: 1; transform: scale(1); }
 .price-name { font-size: 1rem; letter-spacing: .08em; }
 .price-value {
   font-size: 1.05rem;
+  font-weight: 700;
   letter-spacing: .06em;
   color: var(--green);
   white-space: nowrap;
 }
 .price-note {
   margin-top: 24px;
-  font-size: .85rem;
+  font-size: .95rem;
   letter-spacing: .04em;
   color: var(--ink-soft);
   text-align: center;
@@ -592,6 +603,7 @@ body.scrolled .nav-logo .logo-icon { opacity: 1; transform: scale(1); }
   background: var(--green);
   color: var(--white);
   font-size: .85rem;
+  font-weight: 700;
   letter-spacing: .14em;
   padding: 8px 24px;
   border-radius: 999px;
@@ -620,9 +632,9 @@ body.scrolled .nav-logo .logo-icon { opacity: 1; transform: scale(1); }
   text-decoration: line-through;
   margin-right: 8px;
 }
-.monitor-new { color: var(--green); font-weight: 600; font-size: 1.2rem; }
+.monitor-new { color: var(--green); font-weight: 700; font-size: 1.2rem; }
 .monitor-note {
-  font-size: .85rem;
+  font-size: .95rem;
   letter-spacing: .04em;
   color: var(--ink-soft);
 }
@@ -655,13 +667,14 @@ body.scrolled .nav-logo .logo-icon { opacity: 1; transform: scale(1); }
   color: var(--green);
 }
 .price-card-title {
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 700;
   letter-spacing: .08em;
   flex: 1;
 }
 .price-card-value {
   font-size: 1.1rem;
+  font-weight: 700;
   letter-spacing: .04em;
   color: var(--green);
   white-space: nowrap;
@@ -689,7 +702,7 @@ body.scrolled .nav-logo .logo-icon { opacity: 1; transform: scale(1); }
   font-weight: 600;
 }
 .price-card-period {
-  font-size: .85rem;
+  font-size: .95rem;
   letter-spacing: .04em;
   color: var(--ink-soft);
 }
@@ -705,8 +718,8 @@ body.scrolled .nav-logo .logo-icon { opacity: 1; transform: scale(1); }
 /* Maintenance comparison */
 .maintenance-head {
   text-align: center;
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 700;
   letter-spacing: .08em;
   margin: 8px 0 28px;
 }
@@ -724,13 +737,13 @@ body.scrolled .nav-logo .logo-icon { opacity: 1; transform: scale(1); }
   text-align: center;
 }
 .maintenance-name {
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 700;
   letter-spacing: .08em;
   margin-bottom: 10px;
 }
 .maintenance-freq {
-  font-size: .9rem;
+  font-size: .95rem;
   letter-spacing: .04em;
   color: var(--ink-soft);
   margin-bottom: 18px;
@@ -739,11 +752,11 @@ body.scrolled .nav-logo .logo-icon { opacity: 1; transform: scale(1); }
   font-size: 1.4rem;
   letter-spacing: .04em;
   color: var(--green);
-  font-weight: 600;
+  font-weight: 700;
 }
 .maintenance-note {
   text-align: center;
-  font-size: .85rem;
+  font-size: .95rem;
   letter-spacing: .04em;
   color: var(--ink-soft);
   margin-bottom: 8px;
@@ -776,8 +789,8 @@ body.scrolled .nav-logo .logo-icon { opacity: 1; transform: scale(1); }
 }
 .flow-body { padding-top: 8px; }
 .flow-title {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.05rem;
+  font-weight: 700;
   letter-spacing: .08em;
   margin-bottom: 6px;
 }
@@ -793,8 +806,8 @@ body.scrolled .nav-logo .logo-icon { opacity: 1; transform: scale(1); }
   text-align: center;
   max-width: 520px;
   margin: 0 auto 48px;
-  font-size: 1.05rem;
-  line-height: 2.2;
+  font-size: 1rem;
+  line-height: 2;
   letter-spacing: .04em;
   color: var(--ink-soft);
 }
@@ -939,7 +952,7 @@ footer {
 .page-header .section-tag { margin-bottom: 16px; }
 .page-header h1 {
   font-size: clamp(1.4rem, 4.5vw, 2.1rem);
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: .08em;
   line-height: 1.8;
 }
