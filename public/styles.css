@@ -422,8 +422,16 @@ body.hero-passed .navbar-on-dark .nav-logo img { filter: none; }
   gap: 16px;
 }
 .hero-cta-group .btn { flex: 1 1 240px; }
-@media (max-width: 520px) {
-  .hero-cta-group .btn { flex: 1 1 100%; }
+
+/* Mobile-only line break in hero copy */
+.br-sp { display: none; }
+
+@media (max-width: 768px) {
+  .hero-top-content { width: min(1040px, 100%); padding-left: 20px; padding-right: 20px; }
+  .hero-top-content h1 { font-size: clamp(1.35rem, 6vw, 1.6rem); }
+  .br-sp { display: inline; }
+  .hero-cta-group { flex-direction: column; }
+  .hero-cta-group .btn { flex: 1 1 auto; width: 100%; }
 }
 
 /* ===== About page ===== */
