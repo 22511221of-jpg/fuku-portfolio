@@ -379,7 +379,7 @@ section { padding: 96px 0; }
   min-height: 100vh;
   display: flex;
   align-items: flex-end;
-  background-image: url('https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&w=1920&q=80');
+  background-image: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1920&q=80');
   background-size: cover;
   background-position: center;
 }
@@ -387,7 +387,7 @@ section { padding: 96px 0; }
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,.45);
+  background: rgba(0,0,0,.35);
 }
 .hero-top-content {
   position: relative;
