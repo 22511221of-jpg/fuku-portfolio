@@ -1,3 +1,13 @@
+// ===== Header color switch: white over hero, dark once scrolled past it =====
+const hero = document.querySelector('.hero-top');
+if (hero) {
+  const onHeroScroll = () => {
+    document.body.classList.toggle('hero-passed', hero.getBoundingClientRect().bottom <= 0);
+  };
+  window.addEventListener('scroll', onHeroScroll, { passive: true });
+  onHeroScroll();
+}
+
 // ===== Hamburger drawer =====
 const hamburger = document.getElementById('hamburger');
 const drawer = document.getElementById('drawer');

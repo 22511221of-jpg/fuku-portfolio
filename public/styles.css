@@ -128,9 +128,14 @@ section { padding: 96px 0; }
   height: 100%;
   width: auto;
   filter: none;
+  transition: filter .3s ease;
 }
 .nav-logo .logo-full { opacity: 1; transform: scale(1); }
 .nav-logo .logo-icon { opacity: 0; transform: scale(.85); }
+
+/* Header over hero: white logo until scrolled past the hero, then dark */
+.navbar-on-dark .nav-logo img { filter: brightness(0) invert(1); }
+body.hero-passed .navbar-on-dark .nav-logo img { filter: none; }
 
 /* ===== Hamburger ===== */
 .hamburger {
