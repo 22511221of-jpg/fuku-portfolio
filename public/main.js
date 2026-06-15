@@ -1,10 +1,3 @@
-// ===== Scroll: compact nav + logo swap =====
-const onScroll = () => {
-  document.body.classList.toggle('scrolled', window.scrollY > 60);
-};
-window.addEventListener('scroll', onScroll, { passive: true });
-onScroll();
-
 // ===== Hamburger drawer =====
 const hamburger = document.getElementById('hamburger');
 const drawer = document.getElementById('drawer');

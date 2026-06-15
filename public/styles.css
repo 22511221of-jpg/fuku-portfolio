@@ -105,9 +105,6 @@ section { padding: 96px 0; }
   top: 0; left: 0; right: 0;
   z-index: 1000;
   background: transparent;
-  backdrop-filter: none;
-  border-bottom: 1px solid transparent;
-  transition: background .35s ease, backdrop-filter .35s ease, border-color .35s ease, box-shadow .35s ease;
 }
 .nav-inner {
   width: min(1100px, 92%);
@@ -116,14 +113,6 @@ section { padding: 96px 0; }
   align-items: center;
   justify-content: space-between;
   padding: 18px 0;
-  transition: padding .35s ease;
-}
-body.scrolled .nav-inner { padding: 10px 0; }
-body.scrolled .navbar {
-  background: rgba(255,255,255,.92);
-  backdrop-filter: blur(8px);
-  border-color: var(--line);
-  box-shadow: 0 4px 20px rgba(0,0,0,.04);
 }
 
 .nav-logo {
@@ -131,23 +120,20 @@ body.scrolled .navbar {
   display: block;
   width: 140px;
   height: 40px;
-  transition: height .35s ease;
 }
-body.scrolled .nav-logo { height: 32px; }
 
 .nav-logo img {
   position: absolute;
   top: 0; left: 0;
   height: 100%;
   width: auto;
-  filter: brightness(0) invert(1);
-  transition: opacity .35s ease, transform .35s ease, filter .35s ease;
+  filter: none;
 }
 .nav-logo .logo-full { opacity: 1; transform: scale(1); }
 .nav-logo .logo-icon { opacity: 0; transform: scale(.85); }
-body.scrolled .nav-logo .logo-full { opacity: 0; transform: scale(.85); }
-body.scrolled .nav-logo .logo-icon { opacity: 1; transform: scale(1); }
-body.scrolled .nav-logo img { filter: none; }
+
+/* Pages whose header overlays a dark background (e.g. hero image) */
+.navbar-on-dark .nav-logo img { filter: brightness(0) invert(1); }
 
 /* ===== Hamburger ===== */
 .hamburger {
