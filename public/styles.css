@@ -132,9 +132,6 @@ section { padding: 96px 0; }
 .nav-logo .logo-full { opacity: 1; transform: scale(1); }
 .nav-logo .logo-icon { opacity: 0; transform: scale(.85); }
 
-/* Pages whose header overlays a dark background (e.g. hero image) */
-.navbar-on-dark .nav-logo img { filter: brightness(0) invert(1); }
-
 /* ===== Hamburger ===== */
 .hamburger {
   width: 46px;
