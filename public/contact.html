@@ -51,27 +51,38 @@
 
       <form class="contact-form fade delay-1" action="https://formspree.io/f/xqeogwvj" method="POST">
         <div class="form-group">
-          <label for="name">お名前</label>
-          <input type="text" id="name" name="name" required>
+          <label for="name" class="form-label">お名前 <span class="badge badge-req">必須</span></label>
+          <input type="text" id="name" name="name" placeholder="山田 太郎" required>
         </div>
         <div class="form-group">
-          <label for="email">メールアドレス</label>
-          <input type="email" id="email" name="email" required>
+          <label for="company" class="form-label">店舗名・屋号 <span class="badge badge-opt">任意</span></label>
+          <input type="text" id="company" name="company" placeholder="〇〇カフェ">
         </div>
         <div class="form-group">
-          <label>ご相談内容</label>
-          <div class="checkbox-group">
-            <label><input type="checkbox" name="topic" value="hp"> ホームページ制作</label>
-            <label><input type="checkbox" name="topic" value="lp"> ランディングページ制作</label>
-            <label><input type="checkbox" name="topic" value="logo"> ロゴデザイン</label>
-            <label><input type="checkbox" name="topic" value="support"> 更新・保守サポート</label>
-            <label><input type="checkbox" name="topic" value="renewal"> サイトリニューアル</label>
-            <label><input type="checkbox" name="topic" value="other"> その他</label>
+          <label for="email" class="form-label">メールアドレス <span class="badge badge-req">必須</span></label>
+          <input type="email" id="email" name="email" placeholder="example@email.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">ご相談内容 <span class="badge badge-opt">任意</span></label>
+          <div class="radio-group">
+            <label><input type="radio" name="topic" value="hp"> ホームページ制作</label>
+            <label><input type="radio" name="topic" value="lp"> ランディングページ制作</label>
+            <label><input type="radio" name="topic" value="logo"> ロゴデザイン</label>
+            <label><input type="radio" name="topic" value="support"> 更新・保守サポート</label>
+            <label><input type="radio" name="topic" value="renewal"> サイトリニューアル</label>
+            <label><input type="radio" name="topic" value="estimate"> お見積り・納期について知りたい</label>
+            <label><input type="radio" name="topic" value="other"> その他</label>
           </div>
         </div>
         <div class="form-group">
-          <label for="message">メッセージ</label>
-          <textarea id="message" name="message" rows="6"></textarea>
+          <label for="message" class="form-label">ご相談の詳細 <span class="badge badge-req">必須</span></label>
+          <textarea id="message" name="message" rows="6" placeholder="まだぼんやりしたイメージでも大丈夫です。お気軽にご記入ください。" required></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-consent">
+            <input type="checkbox" name="privacy_agreement" value="同意する" required>
+            <span><a href="#">プライバシーポリシー</a>に同意する <span class="badge badge-req">必須</span></span>
+          </label>
         </div>
         <input type="hidden" name="_next" value="https://fuku-portfolio-mocha.vercel.app/contact.html">
         <button type="submit" class="btn btn-fill">送信する</button>
